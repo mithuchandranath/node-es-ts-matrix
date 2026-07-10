@@ -6,7 +6,11 @@ import sitemap from "@astrojs/sitemap";
 // GitHub Pages under a project repo lives at https://<user>.github.io/<repo>/
 // so `site` is the origin and `base` is the sub-path (with trailing slash).
 const SITE = process.env.SITE_URL ?? "https://mithuchandranath.github.io";
-const BASE = process.env.BASE_PATH ?? "/node-es-ts-matrix/";
+// actions/configure-pages emits base_path WITHOUT a trailing slash
+// (e.g. "/node-es-ts-matrix"); Astro's BASE_URL needs the slash so
+// asset URLs like `${BASE_URL}favicon.svg` resolve correctly.
+const rawBase = process.env.BASE_PATH ?? "/node-es-ts-matrix/";
+const BASE = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
 
 export default defineConfig({
   site: SITE,

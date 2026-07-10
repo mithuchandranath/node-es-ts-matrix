@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
   refresh:
@@ -28,16 +27,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run fetch-data
 
-      - name: Open PR if changed
-        uses: peter-evans/create-pull-request@v7
-        with:
-          commit-message: "data: refresh matrix.json"
-          title: "data: refresh matrix.json"
-          body: |
-            Automated weekly refresh of `src/data/matrix.json` from upstream sources
-            (`@tsconfig/bases`, `nodejs/Release`, npm registry).
-
-            Review the diff, then merge to deploy.
-          branch: data/refresh-matrix
-          delete-branch: true
-          add-paths: src/data/matrix.json
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- src/data/matrix.json; then
+            echo "matrix.json unchanged — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/matrix.json
+          git commit -m "data: refresh matrix.json"
+          git push

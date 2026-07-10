@@ -27,6 +27,8 @@ jobs:
       - name: Derive Pages URL
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - name: Build
         env:
           SITE_URL: ${{ steps.pages.outputs.origin }}

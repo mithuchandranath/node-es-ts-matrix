@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "BASE_PATH=/ astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "BASE_PATH=/ astro preview",
     "astro": "astro",
     "fetch-data": "tsx scripts/fetch-data.ts"
   },

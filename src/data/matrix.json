@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T13:45:51.271Z",
+  "generatedAt": "2026-07-10T14:04:50.259Z",
   "sources": {
     "tsconfigBases": "https://github.com/tsconfig/bases",
     "nodeSchedule": "https://github.com/nodejs/Release",
@@ -179,8 +179,9 @@
         "ESNext.Temporal"
       ],
       "module": "nodenext",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "6.0",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
       "targetProposals": [
         {
           "title": "RegExp.escape",
@@ -252,8 +253,9 @@
         "ESNext.Promise"
       ],
       "module": "nodenext",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "5.7",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html",
       "targetProposals": [
         {
           "title": "ArrayBuffer transfer",
@@ -301,8 +303,9 @@
         "ESNext.Promise"
       ],
       "module": "nodenext",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "5.7",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html",
       "targetProposals": [
         {
           "title": "ArrayBuffer transfer",
@@ -351,8 +354,9 @@
         "ESNext.Iterator"
       ],
       "module": "nodenext",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -396,8 +400,9 @@
         "es2023"
       ],
       "module": "nodenext",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -443,8 +448,9 @@
         "es2023"
       ],
       "module": "nodenext",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -488,8 +494,9 @@
         "es2023"
       ],
       "module": "node16",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -535,8 +542,9 @@
         "es2023"
       ],
       "module": "node16",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -580,8 +588,9 @@
         "es2022"
       ],
       "module": "node16",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -627,8 +636,9 @@
         "es2021"
       ],
       "module": "node16",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "4.3",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-3.html",
       "targetProposals": [
         {
           "title": "Numeric separators",
@@ -675,8 +685,9 @@
         "es2020"
       ],
       "module": "node16",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "3.5",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html",
       "targetProposals": [
         {
           "title": "import.meta",
@@ -742,8 +753,9 @@
         "es2020.string"
       ],
       "module": "node16",
-      "minTsVersion": "unknown",
-      "minTsVersionSource": "unknown",
+      "minTsVersion": "3.4",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html",
       "targetProposals": [
         {
           "title": "Array.prototype.{flat,flatMap}",

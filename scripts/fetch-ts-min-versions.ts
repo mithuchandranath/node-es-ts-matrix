@@ -28,7 +28,11 @@ async function ghJson<T>(url: string, attempt = 0): Promise<T> {
     return ghJson<T>(url, attempt + 1);
   }
   if (!res.ok) {
-    throw new Error(`GET ${url} → ${res.status} ${res.statusText}`);
+    const err = new Error(
+      `GET ${url} → ${res.status} ${res.statusText}`,
+    ) as Error & { status?: number };
+    err.status = res.status;
+    throw err;
   }
   return (await res.json()) as T;
 }
@@ -68,8 +72,14 @@ async function libFilesAt(ref: string): Promise<Set<string>> {
   try {
     const entries = await ghJson<Array<{ name: string }>>(LIB_URL(ref));
     return new Set(entries.map((e) => e.name));
-  } catch {
-    return new Set();
+  } catch (err) {
+    // 404 is expected — very old tags predate `lib/` being tracked at the
+    // repo root. Anything else (403 rate limit, 401 auth, 5xx after retry)
+    // is a real problem; propagate so the caller can decide, instead of
+    // silently poisoning every row with "unknown".
+    const status = (err as { status?: number }).status;
+    if (status === 404) return new Set();
+    throw err;
   }
 }
 

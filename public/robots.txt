@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mithuchandranath.github.io/node-es-ts-matrix/sitemap-index.xml

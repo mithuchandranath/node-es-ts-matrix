@@ -1,0 +1,43 @@
+name: Refresh matrix data
+
+on:
+  schedule:
+    # Weekly, Mondays 06:17 UTC (off-peak minute to avoid the :00 stampede)
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run fetch-data
+
+      - name: Open PR if changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "data: refresh matrix.json"
+          title: "data: refresh matrix.json"
+          body: |
+            Automated weekly refresh of `src/data/matrix.json` from upstream sources
+            (`@tsconfig/bases`, `nodejs/Release`, npm registry).
+
+            Review the diff, then merge to deploy.
+          branch: data/refresh-matrix
+          delete-branch: true
+          add-paths: src/data/matrix.json

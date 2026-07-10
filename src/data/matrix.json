@@ -1,0 +1,663 @@
+{
+  "generatedAt": "2026-07-10T11:49:16.656Z",
+  "sources": {
+    "tsconfigBases": "https://github.com/tsconfig/bases",
+    "nodeSchedule": "https://github.com/nodejs/Release",
+    "typescriptRegistry": "https://registry.npmjs.org/typescript",
+    "typescriptRepo": "https://github.com/microsoft/TypeScript",
+    "tc39Proposals": "https://github.com/tc39/proposals"
+  },
+  "nextReleases": {
+    "typescript": {
+      "latest": "7.0.2",
+      "next": "7.1.0-dev.20260710.1",
+      "beta": "6.0.0-beta",
+      "rc": "7.0.1-rc"
+    },
+    "node": {
+      "major": 27,
+      "codename": "",
+      "eol": "2030-04-30"
+    }
+  },
+  "rows": [
+    {
+      "nodeMajor": 27,
+      "nodeCodename": "",
+      "status": "future",
+      "maintenanceStart": "2027-10-20",
+      "eol": "2030-04-30",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
+      "nativeTsStripping": true
+    },
+    {
+      "nodeMajor": 26,
+      "nodeCodename": "",
+      "status": "current",
+      "ltsStart": "2026-10-28",
+      "maintenanceStart": "2027-10-20",
+      "eol": "2029-04-30",
+      "target": "es2025",
+      "lib": [
+        "es2025",
+        "ESNext.Collection",
+        "ESNext.Temporal"
+      ],
+      "module": "nodenext",
+      "minTsVersion": "6.0",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
+      "targetProposals": [
+        {
+          "title": "RegExp.escape",
+          "url": "https://github.com/tc39/proposal-regex-escaping"
+        },
+        {
+          "title": "Redeclarable global eval-introduced vars",
+          "url": "https://github.com/tc39/proposal-redeclarable-global-eval-vars"
+        },
+        {
+          "title": "Float16 on TypedArrays, DataView, Math.f16round",
+          "url": "https://github.com/tc39/proposal-float16array"
+        },
+        {
+          "title": "Promise.try",
+          "url": "https://github.com/tc39/proposal-promise-try"
+        },
+        {
+          "title": "Sync Iterator helpers",
+          "url": "https://github.com/tc39/proposal-iterator-helpers"
+        },
+        {
+          "title": "JSON Modules",
+          "url": "https://github.com/tc39/proposal-json-modules"
+        },
+        {
+          "title": "Import Attributes",
+          "url": "https://github.com/tc39/proposal-import-attributes"
+        },
+        {
+          "title": "RegExp Modifiers",
+          "url": "https://github.com/tc39/proposal-regexp-modifiers"
+        },
+        {
+          "title": "New Set methods",
+          "url": "https://github.com/tc39/proposal-set-methods"
+        },
+        {
+          "title": "Duplicate named capture groups",
+          "url": "https://github.com/tc39/proposal-duplicate-named-capturing-groups"
+        }
+      ],
+      "nativeTsStripping": true,
+      "tsconfigDisplay": "Node 26"
+    },
+    {
+      "nodeMajor": 25,
+      "status": "eol",
+      "maintenanceStart": "2026-04-01",
+      "eol": "2026-06-01",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
+      "nativeTsStripping": true
+    },
+    {
+      "nodeMajor": 24,
+      "nodeCodename": "Krypton",
+      "status": "active-lts",
+      "ltsStart": "2025-10-28",
+      "maintenanceStart": "2026-10-20",
+      "eol": "2028-04-30",
+      "target": "es2024",
+      "lib": [
+        "es2024",
+        "ESNext.Array",
+        "ESNext.Collection",
+        "ESNext.Error",
+        "ESNext.Iterator",
+        "ESNext.Promise"
+      ],
+      "module": "nodenext",
+      "minTsVersion": "5.7",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html",
+      "targetProposals": [
+        {
+          "title": "ArrayBuffer transfer",
+          "url": "https://github.com/tc39/proposal-arraybuffer-transfer"
+        },
+        {
+          "title": "Promise.withResolvers",
+          "url": "https://github.com/tc39/proposal-promise-with-resolvers"
+        },
+        {
+          "title": "Array Grouping",
+          "url": "https://github.com/tc39/proposal-array-grouping"
+        },
+        {
+          "title": "Resizable and growable ArrayBuffers",
+          "url": "https://github.com/tc39/proposal-resizablearraybuffer"
+        },
+        {
+          "title": "RegExp v flag with set notation + properties of strings",
+          "url": "https://github.com/tc39/proposal-regexp-v-flag"
+        },
+        {
+          "title": "Atomics.waitAsync",
+          "url": "https://github.com/tc39/proposal-atomics-wait-async"
+        },
+        {
+          "title": "Well-Formed Unicode Strings",
+          "url": "https://github.com/tc39/proposal-is-usv-string"
+        }
+      ],
+      "nativeTsStripping": true,
+      "tsconfigDisplay": "Node 24"
+    },
+    {
+      "nodeMajor": 23,
+      "status": "eol",
+      "maintenanceStart": "2025-04-01",
+      "eol": "2025-06-01",
+      "target": "es2024",
+      "lib": [
+        "es2024",
+        "ESNext.Array",
+        "ESNext.Collection",
+        "ESNext.Iterator",
+        "ESNext.Promise"
+      ],
+      "module": "nodenext",
+      "minTsVersion": "5.7",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html",
+      "targetProposals": [
+        {
+          "title": "ArrayBuffer transfer",
+          "url": "https://github.com/tc39/proposal-arraybuffer-transfer"
+        },
+        {
+          "title": "Promise.withResolvers",
+          "url": "https://github.com/tc39/proposal-promise-with-resolvers"
+        },
+        {
+          "title": "Array Grouping",
+          "url": "https://github.com/tc39/proposal-array-grouping"
+        },
+        {
+          "title": "Resizable and growable ArrayBuffers",
+          "url": "https://github.com/tc39/proposal-resizablearraybuffer"
+        },
+        {
+          "title": "RegExp v flag with set notation + properties of strings",
+          "url": "https://github.com/tc39/proposal-regexp-v-flag"
+        },
+        {
+          "title": "Atomics.waitAsync",
+          "url": "https://github.com/tc39/proposal-atomics-wait-async"
+        },
+        {
+          "title": "Well-Formed Unicode Strings",
+          "url": "https://github.com/tc39/proposal-is-usv-string"
+        }
+      ],
+      "nativeTsStripping": true,
+      "tsconfigDisplay": "Node 23"
+    },
+    {
+      "nodeMajor": 22,
+      "nodeCodename": "Jod",
+      "status": "maintenance",
+      "ltsStart": "2024-10-29",
+      "maintenanceStart": "2025-10-21",
+      "eol": "2027-04-30",
+      "target": "es2022",
+      "lib": [
+        "es2024",
+        "ESNext.Array",
+        "ESNext.Collection",
+        "ESNext.Iterator"
+      ],
+      "module": "nodenext",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "targetProposals": [
+        {
+          "title": "Error Cause",
+          "url": "https://github.com/tc39/proposal-error-cause"
+        },
+        {
+          "title": "Class Static Block",
+          "url": "https://github.com/tc39/proposal-class-static-block"
+        },
+        {
+          "title": "Accessible Object.prototype.hasOwnProperty",
+          "url": "https://github.com/tc39/proposal-accessible-object-hasownproperty"
+        },
+        {
+          "title": ".at()",
+          "url": "https://github.com/tc39/proposal-relative-indexing-method"
+        },
+        {
+          "title": "Ergonomic brand checks for Private Fields",
+          "url": "https://github.com/tc39/proposal-private-fields-in-in"
+        },
+        {
+          "title": "Top-level await",
+          "url": "https://github.com/tc39/proposal-top-level-await"
+        },
+        {
+          "title": "RegExp Match Indices",
+          "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        }
+      ],
+      "nativeTsStripping": true,
+      "tsconfigDisplay": "Node 22"
+    },
+    {
+      "nodeMajor": 21,
+      "status": "eol",
+      "maintenanceStart": "2024-04-01",
+      "eol": "2024-06-01",
+      "target": "es2022",
+      "lib": [
+        "es2023"
+      ],
+      "module": "nodenext",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "targetProposals": [
+        {
+          "title": "Error Cause",
+          "url": "https://github.com/tc39/proposal-error-cause"
+        },
+        {
+          "title": "Class Static Block",
+          "url": "https://github.com/tc39/proposal-class-static-block"
+        },
+        {
+          "title": "Accessible Object.prototype.hasOwnProperty",
+          "url": "https://github.com/tc39/proposal-accessible-object-hasownproperty"
+        },
+        {
+          "title": ".at()",
+          "url": "https://github.com/tc39/proposal-relative-indexing-method"
+        },
+        {
+          "title": "Ergonomic brand checks for Private Fields",
+          "url": "https://github.com/tc39/proposal-private-fields-in-in"
+        },
+        {
+          "title": "Top-level await",
+          "url": "https://github.com/tc39/proposal-top-level-await"
+        },
+        {
+          "title": "RegExp Match Indices",
+          "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        }
+      ],
+      "nativeTsStripping": false,
+      "tsconfigDisplay": "Node 21"
+    },
+    {
+      "nodeMajor": 20,
+      "nodeCodename": "Iron",
+      "status": "eol",
+      "ltsStart": "2023-10-24",
+      "maintenanceStart": "2024-10-22",
+      "eol": "2026-04-30",
+      "target": "es2022",
+      "lib": [
+        "es2023"
+      ],
+      "module": "nodenext",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "targetProposals": [
+        {
+          "title": "Error Cause",
+          "url": "https://github.com/tc39/proposal-error-cause"
+        },
+        {
+          "title": "Class Static Block",
+          "url": "https://github.com/tc39/proposal-class-static-block"
+        },
+        {
+          "title": "Accessible Object.prototype.hasOwnProperty",
+          "url": "https://github.com/tc39/proposal-accessible-object-hasownproperty"
+        },
+        {
+          "title": ".at()",
+          "url": "https://github.com/tc39/proposal-relative-indexing-method"
+        },
+        {
+          "title": "Ergonomic brand checks for Private Fields",
+          "url": "https://github.com/tc39/proposal-private-fields-in-in"
+        },
+        {
+          "title": "Top-level await",
+          "url": "https://github.com/tc39/proposal-top-level-await"
+        },
+        {
+          "title": "RegExp Match Indices",
+          "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        }
+      ],
+      "nativeTsStripping": false,
+      "tsconfigDisplay": "Node 20"
+    },
+    {
+      "nodeMajor": 19,
+      "status": "eol",
+      "maintenanceStart": "2023-04-01",
+      "eol": "2023-06-01",
+      "target": "es2022",
+      "lib": [
+        "es2023"
+      ],
+      "module": "node16",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "targetProposals": [
+        {
+          "title": "Error Cause",
+          "url": "https://github.com/tc39/proposal-error-cause"
+        },
+        {
+          "title": "Class Static Block",
+          "url": "https://github.com/tc39/proposal-class-static-block"
+        },
+        {
+          "title": "Accessible Object.prototype.hasOwnProperty",
+          "url": "https://github.com/tc39/proposal-accessible-object-hasownproperty"
+        },
+        {
+          "title": ".at()",
+          "url": "https://github.com/tc39/proposal-relative-indexing-method"
+        },
+        {
+          "title": "Ergonomic brand checks for Private Fields",
+          "url": "https://github.com/tc39/proposal-private-fields-in-in"
+        },
+        {
+          "title": "Top-level await",
+          "url": "https://github.com/tc39/proposal-top-level-await"
+        },
+        {
+          "title": "RegExp Match Indices",
+          "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        }
+      ],
+      "nativeTsStripping": false,
+      "tsconfigDisplay": "Node 19"
+    },
+    {
+      "nodeMajor": 18,
+      "nodeCodename": "Hydrogen",
+      "status": "eol",
+      "ltsStart": "2022-10-25",
+      "maintenanceStart": "2023-10-18",
+      "eol": "2025-04-30",
+      "target": "es2022",
+      "lib": [
+        "es2023"
+      ],
+      "module": "node16",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "targetProposals": [
+        {
+          "title": "Error Cause",
+          "url": "https://github.com/tc39/proposal-error-cause"
+        },
+        {
+          "title": "Class Static Block",
+          "url": "https://github.com/tc39/proposal-class-static-block"
+        },
+        {
+          "title": "Accessible Object.prototype.hasOwnProperty",
+          "url": "https://github.com/tc39/proposal-accessible-object-hasownproperty"
+        },
+        {
+          "title": ".at()",
+          "url": "https://github.com/tc39/proposal-relative-indexing-method"
+        },
+        {
+          "title": "Ergonomic brand checks for Private Fields",
+          "url": "https://github.com/tc39/proposal-private-fields-in-in"
+        },
+        {
+          "title": "Top-level await",
+          "url": "https://github.com/tc39/proposal-top-level-await"
+        },
+        {
+          "title": "RegExp Match Indices",
+          "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        }
+      ],
+      "nativeTsStripping": false,
+      "tsconfigDisplay": "Node 18"
+    },
+    {
+      "nodeMajor": 17,
+      "status": "eol",
+      "maintenanceStart": "2022-04-01",
+      "eol": "2022-06-01",
+      "target": "es2022",
+      "lib": [
+        "es2022"
+      ],
+      "module": "node16",
+      "minTsVersion": "4.6",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "targetProposals": [
+        {
+          "title": "Error Cause",
+          "url": "https://github.com/tc39/proposal-error-cause"
+        },
+        {
+          "title": "Class Static Block",
+          "url": "https://github.com/tc39/proposal-class-static-block"
+        },
+        {
+          "title": "Accessible Object.prototype.hasOwnProperty",
+          "url": "https://github.com/tc39/proposal-accessible-object-hasownproperty"
+        },
+        {
+          "title": ".at()",
+          "url": "https://github.com/tc39/proposal-relative-indexing-method"
+        },
+        {
+          "title": "Ergonomic brand checks for Private Fields",
+          "url": "https://github.com/tc39/proposal-private-fields-in-in"
+        },
+        {
+          "title": "Top-level await",
+          "url": "https://github.com/tc39/proposal-top-level-await"
+        },
+        {
+          "title": "RegExp Match Indices",
+          "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        }
+      ],
+      "nativeTsStripping": false,
+      "tsconfigDisplay": "Node 17"
+    },
+    {
+      "nodeMajor": 16,
+      "nodeCodename": "Gallium",
+      "status": "eol",
+      "ltsStart": "2021-10-26",
+      "maintenanceStart": "2022-10-18",
+      "eol": "2023-09-11",
+      "target": "es2021",
+      "lib": [
+        "es2021"
+      ],
+      "module": "node16",
+      "minTsVersion": "4.3",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-3.html",
+      "targetProposals": [
+        {
+          "title": "Numeric separators",
+          "url": "https://github.com/tc39/proposal-numeric-separator"
+        },
+        {
+          "title": "Logical Assignment Operators",
+          "url": "https://github.com/tc39/proposal-logical-assignment"
+        },
+        {
+          "title": "WeakRefs",
+          "url": "https://github.com/tc39/proposal-weakrefs"
+        },
+        {
+          "title": "Promise.any",
+          "url": "https://github.com/tc39/proposal-promise-any"
+        },
+        {
+          "title": "String.prototype.replaceAll",
+          "url": "https://github.com/tc39/proposal-string-replaceall"
+        }
+      ],
+      "nativeTsStripping": false,
+      "tsconfigDisplay": "Node 16"
+    },
+    {
+      "nodeMajor": 15,
+      "status": "eol",
+      "maintenanceStart": "2021-04-01",
+      "eol": "2021-06-01",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
+      "nativeTsStripping": false
+    },
+    {
+      "nodeMajor": 14,
+      "nodeCodename": "Fermium",
+      "status": "eol",
+      "ltsStart": "2020-10-27",
+      "maintenanceStart": "2021-10-19",
+      "eol": "2023-04-30",
+      "target": "es2020",
+      "lib": [
+        "es2020"
+      ],
+      "module": "node16",
+      "minTsVersion": "3.5",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html",
+      "targetProposals": [
+        {
+          "title": "import.meta",
+          "url": "https://github.com/tc39/proposal-import-meta"
+        },
+        {
+          "title": "Nullish coalescing Operator",
+          "url": "https://github.com/tc39/proposal-nullish-coalescing"
+        },
+        {
+          "title": "Optional Chaining",
+          "url": "https://github.com/tc39/proposal-optional-chaining"
+        },
+        {
+          "title": "for-in mechanics",
+          "url": "https://github.com/tc39/proposal-for-in-order"
+        },
+        {
+          "title": "globalThis",
+          "url": "https://github.com/tc39/proposal-global"
+        },
+        {
+          "title": "Promise.allSettled",
+          "url": "https://github.com/tc39/proposal-promise-allSettled"
+        },
+        {
+          "title": "BigInt",
+          "url": "https://github.com/tc39/proposal-bigint"
+        },
+        {
+          "title": "import()",
+          "url": "https://github.com/tc39/proposal-dynamic-import"
+        },
+        {
+          "title": "String.prototype.matchAll",
+          "url": "https://github.com/tc39/proposal-string-matchall"
+        }
+      ],
+      "nativeTsStripping": false,
+      "tsconfigDisplay": "Node 14"
+    },
+    {
+      "nodeMajor": 13,
+      "status": "eol",
+      "maintenanceStart": "2020-04-01",
+      "eol": "2020-06-01",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
+      "nativeTsStripping": false
+    },
+    {
+      "nodeMajor": 12,
+      "nodeCodename": "Erbium",
+      "status": "eol",
+      "ltsStart": "2019-10-21",
+      "maintenanceStart": "2020-11-30",
+      "eol": "2022-04-30",
+      "target": "es2019",
+      "lib": [
+        "es2019",
+        "es2020.promise",
+        "es2020.bigint",
+        "es2020.string"
+      ],
+      "module": "node16",
+      "minTsVersion": "3.4",
+      "minTsVersionSource": "typescript-lib",
+      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html",
+      "targetProposals": [
+        {
+          "title": "Array.prototype.{flat,flatMap}",
+          "url": "https://github.com/tc39/proposal-flatMap"
+        },
+        {
+          "title": "String.prototype.{trimStart,trimEnd}",
+          "url": "https://github.com/tc39/proposal-string-left-right-trim"
+        },
+        {
+          "title": "Well-formed JSON.stringify",
+          "url": "https://github.com/tc39/proposal-well-formed-stringify"
+        },
+        {
+          "title": "Object.fromEntries",
+          "url": "https://github.com/tc39/proposal-object-from-entries"
+        },
+        {
+          "title": "Function.prototype.toString revision",
+          "url": "https://github.com/tc39/Function-prototype-toString-revision"
+        },
+        {
+          "title": "Symbol.prototype.description",
+          "url": "https://github.com/tc39/proposal-Symbol-description"
+        },
+        {
+          "title": "JSON superset",
+          "url": "https://github.com/tc39/proposal-json-superset"
+        },
+        {
+          "title": "Optional catch binding",
+          "url": "https://github.com/tc39/proposal-optional-catch-binding"
+        }
+      ],
+      "nativeTsStripping": false,
+      "tsconfigDisplay": "Node 12"
+    }
+  ]
+}

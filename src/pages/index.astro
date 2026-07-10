@@ -1,0 +1,159 @@
+---
+import MatrixTable from "../components/MatrixTable.tsx";
+import matrix from "../data/matrix.json";
+import type { MatrixData } from "../types";
+import "../styles/global.css";
+
+const data = matrix as MatrixData;
+const generated = new Date(data.generatedAt).toUTCString();
+const { typescript: tsNext, node: nodeNext } = data.nextReleases;
+const npmTsUrl = (v: string) =>
+  `https://www.npmjs.com/package/typescript/v/${v}`;
+const upcomingTs: Array<{ label: string; version: string; url: string }> = [
+  tsNext.next && { label: "next", version: tsNext.next, url: npmTsUrl(tsNext.next) },
+  tsNext.rc && { label: "rc", version: tsNext.rc, url: npmTsUrl(tsNext.rc) },
+  tsNext.beta && { label: "beta", version: tsNext.beta, url: npmTsUrl(tsNext.beta) },
+].filter((x): x is { label: string; version: string; url: string } => Boolean(x));
+const nodeReleasesUrl = "https://nodejs.org/en/about/previous-releases";
+
+const title =
+  "Node.js ↔ ECMAScript ↔ TypeScript Compatibility Matrix";
+const description =
+  "For every Node.js LTS, the recommended ECMAScript target and the minimum TypeScript version that supports it — refreshed weekly from tsconfig/bases, nodejs/Release, microsoft/TypeScript, and tc39/proposals.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = new URL("favicon.svg", canonical).toString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: title,
+  description,
+  url: canonical,
+  license: "https://opensource.org/license/mit",
+  keywords: [
+    "Node.js",
+    "TypeScript",
+    "ECMAScript",
+    "tsconfig",
+    "compatibility matrix",
+    "LTS",
+  ],
+  isAccessibleForFree: true,
+  dateModified: data.generatedAt,
+  creator: { "@type": "Person", name: "mithuchandranath" },
+  distribution: {
+    "@type": "DataDownload",
+    encodingFormat: "application/json",
+    contentUrl: new URL("matrix.json", canonical).toString(),
+  },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="index, follow" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Node ↔ ES ↔ TS Matrix" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://www.typescriptlang.org" />
+    <link rel="preconnect" href="https://nodejs.org" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <main class="page">
+      <h1>Node ↔ ECMAScript ↔ TypeScript matrix</h1>
+      <p class="subtitle">
+        For each Node.js major, the ECMAScript target recommended by
+        <code>@tsconfig/bases</code> and the minimum TypeScript compiler version
+        that accepts that target. Use it to pick a matching{" "}
+        <code>tsconfig.json</code> for your runtime.
+      </p>
+
+      <aside class="tips">
+        <strong>Upgrade strategy — Node → ES → TS, in that order:</strong>
+        <ol>
+          <li>Pick a stable Node.js <strong>LTS</strong> version.</li>
+          <li>
+            Look up the ECMAScript target it supports natively (e.g. Node 22 →
+            <code>ES2024</code>).
+          </li>
+          <li>
+            Upgrade TypeScript <em>last</em> to a release that accepts that
+            target, then set <code>compilerOptions.target</code> to it.
+          </li>
+        </ol>
+      </aside>
+
+      <MatrixTable client:load data={data} />
+
+      {(upcomingTs.length > 0 || nodeNext) && (
+        <aside class="upcoming">
+          <strong>Upcoming:</strong>
+          {upcomingTs.length > 0 && (
+            <span>
+              {" "}TypeScript{" "}
+              {upcomingTs.map((t, i) => (
+                <>
+                  {i > 0 ? ", " : ""}
+                  {t.label}{" "}
+                  <a href={t.url} target="_blank" rel="noreferrer">
+                    <code>{t.version}</code>
+                  </a>
+                </>
+              ))}
+              .
+            </span>
+          )}
+          {nodeNext && (
+            <span>
+              {" "}Node{" "}
+              <a href={nodeReleasesUrl} target="_blank" rel="noreferrer">
+                {nodeNext.major}
+                {nodeNext.codename ? ` (${nodeNext.codename})` : ""}
+              </a>
+              {" "}— starts {nodeNext.ltsStart ?? "TBD"}, EOL {nodeNext.eol}.
+            </span>
+          )}
+        </aside>
+      )}
+
+      <p class="generated">
+        Data generated: {generated} · TypeScript latest on npm:{" "}
+        <code>{tsNext.latest ?? "unknown"}</code>
+      </p>
+
+      <p class="sources">
+        Sources:{" "}
+        <a href={data.sources.tsconfigBases}>@tsconfig/bases</a>,{" "}
+        <a href={data.sources.nodeSchedule}>nodejs/Release schedule.json</a>,{" "}
+        <a href={data.sources.typescriptRepo}>microsoft/TypeScript</a> git tags
+        (live min-TS resolution),{" "}
+        <a href={data.sources.typescriptRegistry}>npm registry</a> (dist-tags),
+        and{" "}
+        <a href={data.sources.tc39Proposals}>tc39/proposals</a> finished list.
+      </p>
+    </main>
+  </body>
+</html>

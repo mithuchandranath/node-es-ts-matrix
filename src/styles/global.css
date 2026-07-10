@@ -263,6 +263,110 @@ button:hover {
   color: var(--accent);
 }
 
+.news {
+  margin: 2rem 0 0;
+}
+.news h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+.news-lead {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+.news-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.news-card h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.news-tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: white;
+}
+.news-tag-es {
+  background: var(--badge-future);
+}
+.news-tag-ts {
+  background: var(--badge-lts);
+}
+.news-tag-node {
+  background: var(--badge-current);
+}
+.news-card-lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.news-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.news-card a:hover {
+  text-decoration: underline;
+}
+.news-details summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.news-details summary:hover {
+  color: var(--accent);
+}
+.news-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+}
+.news-list li {
+  margin: 0.2rem 0;
+}
+.news-sub {
+  font-size: 0.85rem;
+}
+.news-sub strong {
+  color: var(--fg);
+}
+.news-empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.news-links {
+  margin: auto 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding-top: 0.35rem;
+  border-top: 1px dashed var(--border);
+}
+.news-links a {
+  color: var(--accent);
+}
+
 @media (max-width: 720px) {
   .page {
     padding: 1.25rem 0.85rem 3rem;
@@ -275,6 +379,9 @@ button:hover {
   .tips,
   .upcoming {
     font-size: 0.85rem;
+  }
+  .news-grid {
+    grid-template-columns: 1fr;
   }
   .controls {
     gap: 0.6rem;

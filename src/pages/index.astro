@@ -6,15 +6,19 @@ import "../styles/global.css";
 
 const data = matrix as MatrixData;
 const generated = new Date(data.generatedAt).toUTCString();
-const { typescript: tsNext, node: nodeNext } = data.nextReleases;
+const { typescript: tsNext } = data.nextReleases;
+const { ecmascript: esUp, typescript: tsUp, node: nodeUp } = data.upcoming;
 const npmTsUrl = (v: string) =>
   `https://www.npmjs.com/package/typescript/v/${v}`;
-const upcomingTs: Array<{ label: string; version: string; url: string }> = [
-  tsNext.next && { label: "next", version: tsNext.next, url: npmTsUrl(tsNext.next) },
-  tsNext.rc && { label: "rc", version: tsNext.rc, url: npmTsUrl(tsNext.rc) },
-  tsNext.beta && { label: "beta", version: tsNext.beta, url: npmTsUrl(tsNext.beta) },
+const upcomingTsChannels: Array<{
+  label: string;
+  version: string;
+  url: string;
+}> = [
+  tsUp.next && { label: "next (nightly)", version: tsUp.next, url: npmTsUrl(tsUp.next) },
+  tsUp.rc && { label: "rc", version: tsUp.rc, url: npmTsUrl(tsUp.rc) },
+  tsUp.beta && { label: "beta", version: tsUp.beta, url: npmTsUrl(tsUp.beta) },
 ].filter((x): x is { label: string; version: string; url: string } => Boolean(x));
-const nodeReleasesUrl = "https://nodejs.org/en/about/previous-releases";
 
 const title =
   "Node.js ↔ ECMAScript ↔ TypeScript Compatibility Matrix";
@@ -108,36 +112,152 @@ const jsonLd = {
 
       <MatrixTable client:load data={data} />
 
-      {(upcomingTs.length > 0 || nodeNext) && (
-        <aside class="upcoming">
-          <strong>Upcoming:</strong>
-          {upcomingTs.length > 0 && (
-            <span>
-              {" "}TypeScript{" "}
-              {upcomingTs.map((t, i) => (
-                <>
-                  {i > 0 ? ", " : ""}
-                  {t.label}{" "}
-                  <a href={t.url} target="_blank" rel="noreferrer">
-                    <code>{t.version}</code>
-                  </a>
-                </>
-              ))}
-              .
-            </span>
-          )}
-          {nodeNext && (
-            <span>
-              {" "}Node{" "}
-              <a href={nodeReleasesUrl} target="_blank" rel="noreferrer">
-                {nodeNext.major}
-                {nodeNext.codename ? ` (${nodeNext.codename})` : ""}
+      <section class="news" aria-labelledby="news-heading">
+        <h2 id="news-heading">What's next in the JS ecosystem</h2>
+        <p class="news-lead">
+          Live signals from TC39, Microsoft/TypeScript, and Node.js so you know
+          what's landing before it hits your <code>tsconfig.json</code>.
+        </p>
+
+        <div class="news-grid">
+          <article class="news-card">
+            <h3>
+              <span class="news-tag news-tag-es">ECMAScript</span>
+              Stage 3 candidates
+            </h3>
+            <p class="news-card-lead">
+              Spec complete, awaiting implementer feedback. Likely to reach
+              Stage 4 (finished) in an upcoming yearly edition.
+            </p>
+            {esUp.stage3.length > 0 ? (
+              <details class="news-details">
+                <summary>
+                  {esUp.stage3.length} proposal
+                  {esUp.stage3.length === 1 ? "" : "s"} at Stage 3
+                </summary>
+                <ul class="news-list">
+                  {esUp.stage3.map((p) => (
+                    <li>
+                      <a href={p.url} target="_blank" rel="noreferrer">
+                        {p.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            ) : (
+              <p class="news-empty">No Stage 3 proposals resolved.</p>
+            )}
+            {esUp.finishedByYear.length > 0 && (
+              <div class="news-sub">
+                <strong>Finished, awaiting publication:</strong>
+                <ul class="news-list">
+                  {esUp.finishedByYear.map((y) => (
+                    <li>
+                      <strong>ES{y.year}</strong> — {y.proposals.length}{" "}
+                      finished proposal
+                      {y.proposals.length === 1 ? "" : "s"}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <p class="news-links">
+              <a href={esUp.proposalsUrl} target="_blank" rel="noreferrer">
+                tc39/proposals
+              </a>{" · "}
+              <a href={esUp.processDocumentUrl} target="_blank" rel="noreferrer">
+                process
+              </a>{" · "}
+              <a href={esUp.specDraftUrl} target="_blank" rel="noreferrer">
+                spec draft
               </a>
-              {" "}— starts {nodeNext.ltsStart ?? "TBD"}, EOL {nodeNext.eol}.
-            </span>
-          )}
-        </aside>
-      )}
+            </p>
+          </article>
+
+          <article class="news-card">
+            <h3>
+              <span class="news-tag news-tag-ts">TypeScript</span>
+              Pre-releases &amp; roadmap
+            </h3>
+            <p class="news-card-lead">
+              Latest stable on npm:{" "}
+              <a
+                href={npmTsUrl(tsUp.latest ?? "latest")}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <code>{tsUp.latest ?? "unknown"}</code>
+              </a>
+              .
+            </p>
+            {upcomingTsChannels.length > 0 && (
+              <ul class="news-list">
+                {upcomingTsChannels.map((t) => (
+                  <li>
+                    <strong>{t.label}:</strong>{" "}
+                    <a href={t.url} target="_blank" rel="noreferrer">
+                      <code>{t.version}</code>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+            <p class="news-links">
+              <a href={tsUp.roadmapUrl} target="_blank" rel="noreferrer">
+                roadmap
+              </a>{" · "}
+              <a href={tsUp.iterationPlansUrl} target="_blank" rel="noreferrer">
+                iteration plans
+              </a>{" · "}
+              <a href={tsUp.releasesUrl} target="_blank" rel="noreferrer">
+                releases
+              </a>{" · "}
+              <a href={tsUp.devBlogUrl} target="_blank" rel="noreferrer">
+                dev blog
+              </a>
+            </p>
+          </article>
+
+          <article class="news-card">
+            <h3>
+              <span class="news-tag news-tag-node">Node.js</span>
+              Upcoming majors
+            </h3>
+            {nodeUp.upcomingMajors.length > 0 ? (
+              <ul class="news-list">
+                {nodeUp.upcomingMajors.map((n) => (
+                  <li>
+                    <strong>Node {n.major}</strong>
+                    {n.codename ? ` (${n.codename})` : ""}
+                    {n.ltsStart ? <> — LTS <code>{n.ltsStart}</code></> : null}
+                    {" · "}EOL <code>{n.eol}</code>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="news-empty">
+                No future majors scheduled yet — check the release schedule for
+                updates.
+              </p>
+            )}
+            <p class="news-links">
+              <a href={nodeUp.scheduleUrl} target="_blank" rel="noreferrer">
+                release schedule
+              </a>{" · "}
+              <a href={nodeUp.releasesUrl} target="_blank" rel="noreferrer">
+                previous releases
+              </a>{" · "}
+              <a href={nodeUp.changelogUrl} target="_blank" rel="noreferrer">
+                CHANGELOG
+              </a>{" · "}
+              <a href={nodeUp.blogUrl} target="_blank" rel="noreferrer">
+                blog
+              </a>
+            </p>
+          </article>
+        </div>
+      </section>
 
       <p class="generated">
         Data generated: {generated} · TypeScript latest on npm:{" "}

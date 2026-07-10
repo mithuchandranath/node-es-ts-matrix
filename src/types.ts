@@ -40,6 +40,42 @@ export type NextReleases = {
   };
 };
 
+export type UpcomingNodeMajor = {
+  major: number;
+  codename?: string;
+  ltsStart?: string;
+  maintenanceStart?: string;
+  eol: string;
+};
+
+export type Upcoming = {
+  ecmascript: {
+    stage3: Proposal[];
+    finishedByYear: Array<{ year: string; proposals: Proposal[] }>;
+    proposalsUrl: string;
+    processDocumentUrl: string;
+    specDraftUrl: string;
+  };
+  typescript: {
+    latest?: string;
+    next?: string;
+    beta?: string;
+    rc?: string;
+    npmLatestUrl: string;
+    roadmapUrl: string;
+    iterationPlansUrl: string;
+    releasesUrl: string;
+    devBlogUrl: string;
+  };
+  node: {
+    upcomingMajors: UpcomingNodeMajor[];
+    scheduleUrl: string;
+    releasesUrl: string;
+    changelogUrl: string;
+    blogUrl: string;
+  };
+};
+
 export type MatrixData = {
   generatedAt: string;
   sources: {
@@ -50,5 +86,6 @@ export type MatrixData = {
     tc39Proposals: string;
   };
   nextReleases: NextReleases;
+  upcoming: Upcoming;
   rows: MatrixRow[];
 };

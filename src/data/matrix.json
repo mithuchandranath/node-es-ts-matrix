@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T11:49:16.656Z",
+  "generatedAt": "2026-07-10T13:45:51.271Z",
   "sources": {
     "tsconfigBases": "https://github.com/tsconfig/bases",
     "nodeSchedule": "https://github.com/nodejs/Release",
@@ -18,6 +18,140 @@
       "major": 27,
       "codename": "",
       "eol": "2030-04-30"
+    }
+  },
+  "upcoming": {
+    "ecmascript": {
+      "stage3": [
+        {
+          "title": "Legacy RegExp features in JavaScript",
+          "url": "https://github.com/tc39/proposal-regexp-legacy-features"
+        },
+        {
+          "title": "Source Phase Imports",
+          "url": "https://github.com/tc39/proposal-source-phase-imports"
+        },
+        {
+          "title": "Dynamic Code Brand Checks",
+          "url": "https://github.com/tc39/proposal-dynamic-code-brand-checks"
+        },
+        {
+          "title": "Deferring Module Evaluation",
+          "url": "https://github.com/tc39/proposal-defer-import-eval"
+        },
+        {
+          "title": "Non-extensible Applies to Private",
+          "url": "https://github.com/tc39/proposal-nonextensible-applies-to-private"
+        },
+        {
+          "title": "Import Text",
+          "url": "https://github.com/tc39/proposal-import-text"
+        },
+        {
+          "title": "iterator chunking",
+          "url": "https://github.com/tc39/proposal-iterator-chunking"
+        },
+        {
+          "title": "Iterator Includes",
+          "url": "https://github.com/michaelficarra/proposal-iterator-includes"
+        },
+        {
+          "title": "Iterator Join",
+          "url": "https://github.com/tc39/proposal-iterator-join"
+        },
+        {
+          "title": "Error Stack Accessor",
+          "url": "https://github.com/tc39/proposal-error-stack-accessor"
+        },
+        {
+          "title": "RegExp Buffer Boundaries (\\A, \\z, \\Z)",
+          "url": "https://github.com/tc39/proposal-regexp-buffer-boundaries"
+        }
+      ],
+      "finishedByYear": [
+        {
+          "year": "2026",
+          "proposals": [
+            {
+              "title": "Upsert",
+              "url": "https://github.com/tc39/proposal-upsert"
+            },
+            {
+              "title": "JSON.parse source text access",
+              "url": "https://github.com/tc39/proposal-json-parse-with-source"
+            },
+            {
+              "title": "Iterator Sequencing",
+              "url": "https://github.com/tc39/proposal-iterator-sequencing"
+            },
+            {
+              "title": "Uint8Array to/from Base64",
+              "url": "https://github.com/tc39/proposal-arraybuffer-base64"
+            },
+            {
+              "title": "Math.sumPrecise",
+              "url": "https://github.com/tc39/proposal-math-sum"
+            },
+            {
+              "title": "Error.isError",
+              "url": "https://github.com/tc39/proposal-is-error"
+            },
+            {
+              "title": "Array.fromAsync",
+              "url": "https://github.com/tc39/proposal-array-from-async"
+            }
+          ]
+        },
+        {
+          "year": "2027",
+          "proposals": [
+            {
+              "title": "Explicit Resource Management",
+              "url": "https://github.com/tc39/proposal-explicit-resource-management"
+            },
+            {
+              "title": "Atomics.pause",
+              "url": "https://github.com/tc39/proposal-atomics-microwait"
+            },
+            {
+              "title": "Joint Iteration",
+              "url": "https://github.com/tc39/proposal-joint-iteration"
+            },
+            {
+              "title": "Temporal",
+              "url": "https://github.com/tc39/proposal-temporal"
+            }
+          ]
+        }
+      ],
+      "proposalsUrl": "https://github.com/tc39/proposals",
+      "processDocumentUrl": "https://tc39.es/process-document/",
+      "specDraftUrl": "https://tc39.es/ecma262/"
+    },
+    "typescript": {
+      "latest": "7.0.2",
+      "next": "7.1.0-dev.20260710.1",
+      "beta": "6.0.0-beta",
+      "rc": "7.0.1-rc",
+      "npmLatestUrl": "https://www.npmjs.com/package/typescript",
+      "roadmapUrl": "https://github.com/microsoft/TypeScript/wiki/Roadmap",
+      "iterationPlansUrl": "https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Planning%22+%22Iteration+Plan%22",
+      "releasesUrl": "https://github.com/microsoft/TypeScript/releases",
+      "devBlogUrl": "https://devblogs.microsoft.com/typescript/"
+    },
+    "node": {
+      "upcomingMajors": [
+        {
+          "major": 27,
+          "codename": "",
+          "maintenanceStart": "2027-10-20",
+          "eol": "2030-04-30"
+        }
+      ],
+      "scheduleUrl": "https://github.com/nodejs/Release#release-schedule",
+      "releasesUrl": "https://nodejs.org/en/about/previous-releases",
+      "changelogUrl": "https://github.com/nodejs/node/blob/main/CHANGELOG.md",
+      "blogUrl": "https://nodejs.org/en/blog"
     }
   },
   "rows": [
@@ -45,9 +179,8 @@
         "ESNext.Temporal"
       ],
       "module": "nodenext",
-      "minTsVersion": "6.0",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "RegExp.escape",
@@ -119,9 +252,8 @@
         "ESNext.Promise"
       ],
       "module": "nodenext",
-      "minTsVersion": "5.7",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "ArrayBuffer transfer",
@@ -169,9 +301,8 @@
         "ESNext.Promise"
       ],
       "module": "nodenext",
-      "minTsVersion": "5.7",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "ArrayBuffer transfer",
@@ -220,9 +351,8 @@
         "ESNext.Iterator"
       ],
       "module": "nodenext",
-      "minTsVersion": "4.6",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -266,9 +396,8 @@
         "es2023"
       ],
       "module": "nodenext",
-      "minTsVersion": "4.6",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -314,9 +443,8 @@
         "es2023"
       ],
       "module": "nodenext",
-      "minTsVersion": "4.6",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -360,9 +488,8 @@
         "es2023"
       ],
       "module": "node16",
-      "minTsVersion": "4.6",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -408,9 +535,8 @@
         "es2023"
       ],
       "module": "node16",
-      "minTsVersion": "4.6",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -454,9 +580,8 @@
         "es2022"
       ],
       "module": "node16",
-      "minTsVersion": "4.6",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-6.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "Error Cause",
@@ -502,9 +627,8 @@
         "es2021"
       ],
       "module": "node16",
-      "minTsVersion": "4.3",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-3.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "Numeric separators",
@@ -551,9 +675,8 @@
         "es2020"
       ],
       "module": "node16",
-      "minTsVersion": "3.5",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "import.meta",
@@ -619,9 +742,8 @@
         "es2020.string"
       ],
       "module": "node16",
-      "minTsVersion": "3.4",
-      "minTsVersionSource": "typescript-lib",
-      "minTsReleaseNotesUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html",
+      "minTsVersion": "unknown",
+      "minTsVersionSource": "unknown",
       "targetProposals": [
         {
           "title": "Array.prototype.{flat,flatMap}",

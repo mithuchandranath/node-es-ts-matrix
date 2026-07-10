@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { tsReleaseNotesUrl } from "./ts-target-map.ts";
 import { fetchFinishedProposals, type Proposal } from "./parse-proposals.ts";
 import { fetchMinTsPerTarget } from "./fetch-ts-min-versions.ts";
+import { fetchActiveStages } from "./fetch-stage3.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = resolve(__dirname, "../src/data/matrix.json");
@@ -109,7 +110,7 @@ function supportsNativeTsStripping(major: number): boolean {
 async function main() {
   const now = new Date();
 
-  const [bases, schedule, tsRegistry, proposalsByYear, liveMinTs] =
+  const [bases, schedule, tsRegistry, proposalsByYear, liveMinTs, activeStages] =
     await Promise.all([
       fetchTsconfigBases(),
       fetchJson<NodeSchedule>(NODE_SCHEDULE),
@@ -121,6 +122,13 @@ async function main() {
           err.message,
         );
         return {} as Record<string, string>;
+      }),
+      fetchActiveStages(["3"]).catch((err) => {
+        console.warn(
+          "fetchActiveStages failed — Stage 3 list will be empty:",
+          err.message,
+        );
+        return {} as Record<string, Proposal[]>;
       }),
     ]);
 
@@ -171,7 +179,7 @@ async function main() {
 
   rows.sort((a, b) => b.nodeMajor - a.nodeMajor);
 
-  // "Upcoming" summary — planned but not-yet-released versions.
+  // Backwards-compatible summary consumed by the table's meta pill.
   const nextNode = rows.find((r) => r.status === "future");
   const nextReleases = {
     typescript: {
@@ -190,6 +198,50 @@ async function main() {
       : undefined,
   };
 
+  // Richer "what's next" news block for the page.
+  const currentYear = now.getUTCFullYear();
+  const upcomingFinishedYears = Object.keys(proposalsByYear)
+    .filter((y) => Number(y) >= currentYear)
+    .sort()
+    .map((year) => ({ year, proposals: proposalsByYear[year] }));
+
+  const upcoming = {
+    ecmascript: {
+      stage3: activeStages["3"] ?? [],
+      finishedByYear: upcomingFinishedYears,
+      proposalsUrl: "https://github.com/tc39/proposals",
+      processDocumentUrl: "https://tc39.es/process-document/",
+      specDraftUrl: "https://tc39.es/ecma262/",
+    },
+    typescript: {
+      latest: tsDistTags.latest,
+      next: tsDistTags.next,
+      beta: tsDistTags.beta,
+      rc: tsDistTags.rc,
+      npmLatestUrl: "https://www.npmjs.com/package/typescript",
+      roadmapUrl: "https://github.com/microsoft/TypeScript/wiki/Roadmap",
+      iterationPlansUrl:
+        "https://github.com/microsoft/TypeScript/issues?q=is%3Aissue+label%3A%22Planning%22+%22Iteration+Plan%22",
+      releasesUrl: "https://github.com/microsoft/TypeScript/releases",
+      devBlogUrl: "https://devblogs.microsoft.com/typescript/",
+    },
+    node: {
+      upcomingMajors: rows
+        .filter((r) => r.status === "future")
+        .map((r) => ({
+          major: r.nodeMajor,
+          codename: r.nodeCodename,
+          ltsStart: r.ltsStart,
+          maintenanceStart: r.maintenanceStart,
+          eol: r.eol,
+        })),
+      scheduleUrl: "https://github.com/nodejs/Release#release-schedule",
+      releasesUrl: "https://nodejs.org/en/about/previous-releases",
+      changelogUrl: "https://github.com/nodejs/node/blob/main/CHANGELOG.md",
+      blogUrl: "https://nodejs.org/en/blog",
+    },
+  };
+
   const output = {
     generatedAt: now.toISOString(),
     sources: {
@@ -200,6 +252,7 @@ async function main() {
       tc39Proposals: "https://github.com/tc39/proposals",
     },
     nextReleases,
+    upcoming,
     rows,
   };
 

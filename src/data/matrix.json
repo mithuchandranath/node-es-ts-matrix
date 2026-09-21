@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T12:44:42.586Z",
+  "generatedAt": "2026-09-21T12:46:38.637Z",
   "sources": {
     "tsconfigBases": "https://github.com/tsconfig/bases",
     "nodeSchedule": "https://github.com/nodejs/Release",
@@ -10,7 +10,7 @@
   "nextReleases": {
     "typescript": {
       "latest": "7.0.2",
-      "next": "7.1.0-dev.20260913.1",
+      "next": "7.1.0-dev.20260921.1",
       "beta": "6.0.0-beta",
       "rc": "7.0.1-rc"
     },
@@ -134,7 +134,7 @@
     },
     "typescript": {
       "latest": "7.0.2",
-      "next": "7.1.0-dev.20260913.1",
+      "next": "7.1.0-dev.20260921.1",
       "beta": "6.0.0-beta",
       "rc": "7.0.1-rc",
       "npmLatestUrl": "https://www.npmjs.com/package/typescript",

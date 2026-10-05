@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T13:52:43.980Z",
+  "generatedAt": "2026-10-05T14:35:51.873Z",
   "sources": {
     "tsconfigBases": "https://github.com/tsconfig/bases",
     "nodeSchedule": "https://github.com/nodejs/Release",
@@ -10,7 +10,7 @@
   "nextReleases": {
     "typescript": {
       "latest": "7.0.2",
-      "next": "7.1.0-dev.20260928.1",
+      "next": "7.1.0-dev.20261005.1",
       "beta": "6.0.0-beta",
       "rc": "7.0.1-rc"
     },
@@ -48,18 +48,6 @@
           "url": "https://github.com/tc39/proposal-import-text"
         },
         {
-          "title": "iterator chunking",
-          "url": "https://github.com/tc39/proposal-iterator-chunking"
-        },
-        {
-          "title": "Iterator Includes",
-          "url": "https://github.com/michaelficarra/proposal-iterator-includes"
-        },
-        {
-          "title": "Iterator Join",
-          "url": "https://github.com/tc39/proposal-iterator-join"
-        },
-        {
           "title": "Error Stack Accessor",
           "url": "https://github.com/tc39/proposal-error-stack-accessor"
         },
@@ -70,6 +58,10 @@
         {
           "title": "Await Dictionary",
           "url": "https://github.com/tc39/proposal-await-dictionary"
+        },
+        {
+          "title": "Curtailing the power of \"Thenables\"",
+          "url": "https://github.com/tc39/proposal-thenable-curtailment"
         }
       ],
       "finishedByYear": [
@@ -110,6 +102,18 @@
           "year": "2027",
           "proposals": [
             {
+              "title": "iterator chunking",
+              "url": "https://github.com/tc39/proposal-iterator-chunking"
+            },
+            {
+              "title": "Iterator Includes",
+              "url": "https://github.com/michaelficarra/proposal-iterator-includes"
+            },
+            {
+              "title": "Iterator Join",
+              "url": "https://github.com/tc39/proposal-iterator-join"
+            },
+            {
               "title": "Explicit Resource Management",
               "url": "https://github.com/tc39/proposal-explicit-resource-management"
             },
@@ -134,7 +138,7 @@
     },
     "typescript": {
       "latest": "7.0.2",
-      "next": "7.1.0-dev.20260928.1",
+      "next": "7.1.0-dev.20261005.1",
       "beta": "6.0.0-beta",
       "rc": "7.0.1-rc",
       "npmLatestUrl": "https://www.npmjs.com/package/typescript",

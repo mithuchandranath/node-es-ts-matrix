@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T15:22:30.506Z",
+  "generatedAt": "2026-10-19T13:12:11.672Z",
   "sources": {
     "tsconfigBases": "https://github.com/tsconfig/bases",
     "nodeSchedule": "https://github.com/nodejs/Release",
@@ -10,7 +10,7 @@
   "nextReleases": {
     "typescript": {
       "latest": "7.0.2",
-      "next": "7.1.0-dev.20261012.1",
+      "next": "7.1.0-dev.20261019.1",
       "beta": "6.0.0-beta",
       "rc": "7.0.1-rc"
     },
@@ -107,7 +107,7 @@
             },
             {
               "title": "Iterator Includes",
-              "url": "https://github.com/michaelficarra/proposal-iterator-includes"
+              "url": "https://github.com/tc39/proposal-iterator-includes"
             },
             {
               "title": "Iterator Join",
@@ -138,7 +138,7 @@
     },
     "typescript": {
       "latest": "7.0.2",
-      "next": "7.1.0-dev.20261012.1",
+      "next": "7.1.0-dev.20261019.1",
       "beta": "6.0.0-beta",
       "rc": "7.0.1-rc",
       "npmLatestUrl": "https://www.npmjs.com/package/typescript",
@@ -393,6 +393,10 @@
         {
           "title": "RegExp Match Indices",
           "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        },
+        {
+          "title": "Class fields",
+          "url": "https://github.com/tc39/proposal-class-fields"
         }
       ],
       "nativeTsStripping": true,
@@ -439,6 +443,10 @@
         {
           "title": "RegExp Match Indices",
           "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        },
+        {
+          "title": "Class fields",
+          "url": "https://github.com/tc39/proposal-class-fields"
         }
       ],
       "nativeTsStripping": false,
@@ -487,6 +495,10 @@
         {
           "title": "RegExp Match Indices",
           "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        },
+        {
+          "title": "Class fields",
+          "url": "https://github.com/tc39/proposal-class-fields"
         }
       ],
       "nativeTsStripping": false,
@@ -533,6 +545,10 @@
         {
           "title": "RegExp Match Indices",
           "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        },
+        {
+          "title": "Class fields",
+          "url": "https://github.com/tc39/proposal-class-fields"
         }
       ],
       "nativeTsStripping": false,
@@ -581,6 +597,10 @@
         {
           "title": "RegExp Match Indices",
           "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        },
+        {
+          "title": "Class fields",
+          "url": "https://github.com/tc39/proposal-class-fields"
         }
       ],
       "nativeTsStripping": false,
@@ -627,6 +647,10 @@
         {
           "title": "RegExp Match Indices",
           "url": "https://github.com/tc39/proposal-regexp-match-indices"
+        },
+        {
+          "title": "Class fields",
+          "url": "https://github.com/tc39/proposal-class-fields"
         }
       ],
       "nativeTsStripping": false,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T13:12:11.672Z",
+  "generatedAt": "2026-10-26T13:00:04.724Z",
   "sources": {
     "tsconfigBases": "https://github.com/tsconfig/bases",
     "nodeSchedule": "https://github.com/nodejs/Release",
@@ -10,14 +10,15 @@
   "nextReleases": {
     "typescript": {
       "latest": "7.0.2",
-      "next": "7.1.0-dev.20261019.1",
-      "beta": "6.0.0-beta",
+      "next": "7.1.0-dev.20261026.1",
+      "beta": "7.1.0-beta",
       "rc": "7.0.1-rc"
     },
     "node": {
       "major": 27,
       "codename": "",
-      "eol": "2030-04-30"
+      "eol": "2030-04-30",
+      "ltsStart": "2027-10-20"
     }
   },
   "upcoming": {
@@ -138,8 +139,8 @@
     },
     "typescript": {
       "latest": "7.0.2",
-      "next": "7.1.0-dev.20261019.1",
-      "beta": "6.0.0-beta",
+      "next": "7.1.0-dev.20261026.1",
+      "beta": "7.1.0-beta",
       "rc": "7.0.1-rc",
       "npmLatestUrl": "https://www.npmjs.com/package/typescript",
       "roadmapUrl": "https://github.com/microsoft/TypeScript/wiki/Roadmap",
@@ -152,7 +153,7 @@
         {
           "major": 27,
           "codename": "",
-          "maintenanceStart": "2027-10-20",
+          "ltsStart": "2027-10-20",
           "eol": "2030-04-30"
         }
       ],
@@ -167,7 +168,7 @@
       "nodeMajor": 27,
       "nodeCodename": "",
       "status": "future",
-      "maintenanceStart": "2027-10-20",
+      "ltsStart": "2027-10-20",
       "eol": "2030-04-30",
       "minTsVersion": "unknown",
       "minTsVersionSource": "unknown",
@@ -247,7 +248,7 @@
     {
       "nodeMajor": 24,
       "nodeCodename": "Krypton",
-      "status": "active-lts",
+      "status": "maintenance",
       "ltsStart": "2025-10-28",
       "maintenanceStart": "2026-10-20",
       "eol": "2028-04-30",
